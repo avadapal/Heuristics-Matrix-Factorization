@@ -158,7 +158,9 @@ for(int aa = 1; aa <= 1; aa++){
 		}
 	}
 
-	updatePredictionMatrix(PredictedMatrix, UserItems, m);
+	cout << "f";
+
+	updatePredictionMatrix(PredictedMatrix, UserItems, n, m);
 }
 
 

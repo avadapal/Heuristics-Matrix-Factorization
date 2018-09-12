@@ -8,9 +8,24 @@ using namespace std;
 void pick_random_subset(std::vector<vector<int> >& user_purchases, std::vector<vector<int> >& item_purchasers, int M[2][100006], 
                         int rat, int server, double rr, int n_servers){
 
-    int c = rat/n_servers;
 
-    for(int i = server * c/2 ; i < (server + 1) * (c); i++){
+    int  kk = 200; 
+
+    int c = (rat - kk)/n_servers;
+
+    for(int j = 1; j <= kk; j++){
+        
+        if(kk == 0) break;
+
+        int u = M[0][j];
+        int v = M[1][j];
+
+        user_purchases[u].push_back(v);
+        item_purchasers[v].push_back(u);
+
+    }
+
+    for(int i = kk + (server * c)  ; i < (server + 1) * (c) + kk; i++){
 
     //cout << server * c/2 << " <-> " << (server + 1) * (c) << endl;
 
@@ -45,9 +60,9 @@ void pick_random_subsetP(std::vector<vector<int> >& user_purchases, std::vector<
 
 
 
-void updatePredictionMatrix(std::vector<std::vector<double>>& PredictedMatrix, std::vector<std::vector<int>>& UserItems, int m){
+void updatePredictionMatrix(std::vector<std::vector<double>>& PredictedMatrix, std::vector<std::vector<int>>& UserItems, int n, int m){
 
-    for(int u = 1; u <= m; u++){
+    for(int u = 1; u <= n; u++){
  
         std::priority_queue<std::pair<double, int>> q;
         for (int i = 1; i <=m; ++i) {

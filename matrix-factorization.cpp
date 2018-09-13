@@ -112,7 +112,7 @@ cout << "m = " << m << endl;
 int profile_size = 10;  
 cout << "The Profile size is: " << profile_size << endl;
 
-for(int aa = 1; aa <= 100; aa++){
+for(int aa = 1; aa <= 100; aa++){ 
 
 	vector<vector<double>> item_profiles(m + 1);
 	vector<vector<double>> user_profiles(n + 1);

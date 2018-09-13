@@ -125,8 +125,6 @@ for(int aa = 1; aa <= 200; aa++){
 	initialize_with_random_profiles(user_profiles, item_profiles, m, n, profile_size);
 	
 	for(int ii = 0; ii <= 220; ii++){
-
-//		cout << "ii = " << ii << endl;
 	
 		if (ii < 100)  n_servers = 1;
 		if (ii >= 100) n_servers = atoi(args[2]); 
@@ -157,8 +155,6 @@ for(int aa = 1; aa <= 200; aa++){
 			PredictedMatrix[i][j] = dot;			
 		}
 	}
-
-	cout << "f";
 
 	updatePredictionMatrix(PredictedMatrix, UserItems, n, m);
 }
